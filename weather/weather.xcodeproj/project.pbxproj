@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC0487B42B1971380063F9CD /* StartingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0487B32B1971380063F9CD /* StartingPage.swift */; };
+		EC0487B62B197BB20063F9CD /* LocationViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0487B52B197BB20063F9CD /* LocationViewList.swift */; };
 		EC94BCDF2B0AC86200A14ED0 /* weatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94BCDE2B0AC86200A14ED0 /* weatherApp.swift */; };
 		EC94BCE12B0AC86200A14ED0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94BCE02B0AC86200A14ED0 /* ContentView.swift */; };
 		EC94BCE32B0AC86300A14ED0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC94BCE22B0AC86300A14ED0 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
+		EC0487B32B1971380063F9CD /* StartingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingPage.swift; sourceTree = "<group>"; };
+		EC0487B52B197BB20063F9CD /* LocationViewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewList.swift; sourceTree = "<group>"; };
 		EC94BCDB2B0AC86200A14ED0 /* weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC94BCDE2B0AC86200A14ED0 /* weatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherApp.swift; sourceTree = "<group>"; };
 		EC94BCE02B0AC86200A14ED0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,7 +91,6 @@
 				EC94BCDE2B0AC86200A14ED0 /* weatherApp.swift */,
 				EC94BCEF2B0ACC8400A14ED0 /* views */,
 				EC94BCEC2B0ACC1E00A14ED0 /* Managers */,
-				EC94BCF82B0ACF3C00A14ED0 /* ModelData.swift */,
 				EC94BCE22B0AC86300A14ED0 /* Assets.xcassets */,
 				EC94BCE42B0AC86300A14ED0 /* Preview Content */,
 				EC94BCFC2B0AD07D00A14ED0 /* Extensions.swift */,
@@ -99,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				EC94BCE52B0AC86300A14ED0 /* Preview Assets.xcassets */,
-				EC94BCFA2B0ACFCB00A14ED0 /* WeatherData.json */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -116,10 +118,14 @@
 		EC94BCEF2B0ACC8400A14ED0 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				EC0487B32B1971380063F9CD /* StartingPage.swift */,
 				EC94BCE02B0AC86200A14ED0 /* ContentView.swift */,
 				EC94BCF02B0ACCE600A14ED0 /* WelcomeView.swift */,
+				EC0487B52B197BB20063F9CD /* LocationViewList.swift */,
 				EC94BCF22B0ACD4400A14ED0 /* LoadingView.swift */,
 				EC94BCF62B0ACEB400A14ED0 /* WeatherView.swift */,
+				EC94BCF82B0ACF3C00A14ED0 /* ModelData.swift */,
+				EC94BCFA2B0ACFCB00A14ED0 /* WeatherData.json */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -213,6 +219,8 @@
 				EC94BCF32B0ACD4400A14ED0 /* LoadingView.swift in Sources */,
 				EC94BCF92B0ACF3C00A14ED0 /* ModelData.swift in Sources */,
 				EC94BCF72B0ACEB400A14ED0 /* WeatherView.swift in Sources */,
+				EC0487B62B197BB20063F9CD /* LocationViewList.swift in Sources */,
+				EC0487B42B1971380063F9CD /* StartingPage.swift in Sources */,
 				EC94BCF12B0ACCE600A14ED0 /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,9 +352,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"weather/Preview Content\"";
+				DEVELOPMENT_TEAM = 4769289FKU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -359,8 +369,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Weather.weather;
+				PRODUCT_BUNDLE_IDENTIFIER = Weather.weathers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -372,9 +383,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"weather/Preview Content\"";
+				DEVELOPMENT_TEAM = 4769289FKU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -387,8 +400,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Weather.weather;
+				PRODUCT_BUNDLE_IDENTIFIER = Weather.weathers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
