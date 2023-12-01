@@ -5,6 +5,12 @@
 //  Created by user243761 on 11/19/23.
 //
 
+//  ModelData.swift
+//  weather
+//
+//  Created by user243761 on 11/19/23.
+//
+
 import Foundation
 
 // If you wish to Archive this project, move this file outside of the Preview Content folder, as this folder is not taken into consideration by the Xcode Archive
@@ -32,3 +38,5 @@ func load<T: Decodable>(_ filename: String) -> T {
         fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
     }
 }
+
+

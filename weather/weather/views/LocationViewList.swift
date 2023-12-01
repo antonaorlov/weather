@@ -2,7 +2,6 @@ import SwiftUI
 
 struct LocationListView: View {
     var body: some View {
-        NavigationView {
             VStack(spacing: 200) {
                 Spacer()
                 Text("Step 2) See which locations are next to you")
@@ -45,7 +44,7 @@ struct LocationListView: View {
             .edgesIgnoringSafeArea(.all)
         }
     }
-}
+
 
 struct LocationListView_Previews: PreviewProvider {
     static var previews: some View {

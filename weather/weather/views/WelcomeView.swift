@@ -13,6 +13,19 @@ struct WelcomeView: View {
 
     var body: some View {
         VStack {
+            
+            AsyncImage(url: URL(string: "https://freepngimg.com/thumb/categories/2275.png")) { phase in
+    if let image = phase.image {
+      image  // Displays the loaded image.
+        .resizable()
+        .scaledToFit()
+    } else if phase.error != nil {
+      Text("There was an error loading the image.")  // Indicates an error.
+    } else {
+      ProgressView()  // Shows a progress view while loading.
+    }
+  }
+  .frame(width: 200, height: 200)  // Set your desired frame for the image.
             VStack(spacing: 20) {
                 Text("Welcome to the Weather App")
                     .bold()
@@ -34,7 +47,8 @@ struct WelcomeView: View {
             .foregroundColor(.white)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
+        .background(LinearGradient(gradient: Gradient(colors: [Color.purple, Color.blue]), startPoint: .top, endPoint: .bottom))
+        .edgesIgnoringSafeArea(.all)    }
 }
 
 struct WelcomeView_Previews: PreviewProvider {
