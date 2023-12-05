@@ -25,7 +25,7 @@ struct WelcomeView: View {
       ProgressView()  // Shows a progress view while loading.
     }
   }
-  .frame(width: 200, height: 200)  // Set your desired frame for the image.
+  .frame(width: 200, height: 200)
             VStack(spacing: 20) {
                 Text("Welcome to the Weather App")
                     .bold()
@@ -37,8 +37,6 @@ struct WelcomeView: View {
             .multilineTextAlignment(.center)
             .padding()
 
-            
-            // LocationButton from CoreLocationUI framework imported above, allows us to requestionLocation
             LocationButton(.shareCurrentLocation) {
                 locationManager.requestLocation()
             }

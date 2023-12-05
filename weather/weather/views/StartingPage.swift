@@ -9,23 +9,21 @@ import SwiftUI
 
 struct StartingPage: View {
   @EnvironmentObject var locationManager: LocationManager
-
+    @State private var buttonOpacity: Double = 0
   var body: some View {
-    NavigationView {  // Embed in NavigationView
+    NavigationView {
       VStack {
                   AsyncImage(url: URL(string: "https://www.freeiconspng.com/thumbs/weather-icon-png/weather-icon-png-8.png")) { phase in
           if let image = phase.image {
-            image  // Displays the loaded image.
+            image
               .resizable()
               .scaledToFit()
           } else if phase.error != nil {
-            Text("There was an error loading the image.")  // Indicates an error.
-          } else {
-            ProgressView()  // Shows a progress view while loading.
+            Text("There was an error loading the image.")
+            ProgressView()
           }
         }
-        .frame(width: 200, height: 200)  // Set your desired frame for the image.
-
+        .frame(width: 200, height: 200)
         VStack(spacing: 20) {
           Text("BEST WEATHER APP")
             .bold()
@@ -46,9 +44,13 @@ struct StartingPage: View {
             .background(Color.green)
             .cornerRadius(10)
         }
-              }
-      // LocationButton from CoreLocationUI framework imported above, allows us to requestionLocation
-
+          .opacity(buttonOpacity)
+                          .onAppear {
+                              withAnimation(.easeIn(duration: 2.0)) {
+                                  buttonOpacity = 1
+                              }
+                          }              }
+      
       .cornerRadius(30)
       .symbolVariant(.fill)
       .foregroundColor(.purple)

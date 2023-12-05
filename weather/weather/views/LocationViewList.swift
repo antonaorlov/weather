@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct LocationListView: View {
+    let locations = ["Brooklyn", "New York City", "New Jersey", "Philadelphia, NY", "Rochester, NY"]
     var body: some View {
             VStack(spacing: 200) {
                 Spacer()
@@ -14,29 +15,12 @@ struct LocationListView: View {
                     .cornerRadius(10)
                     .padding(.top, 20)
                 
-                List {
-                    NavigationLink(destination: ContentView()) {
-                        
-                        
-                        Text("Brooklyn")
-                            .foregroundColor(Color.blue)
-                    }
-                    NavigationLink(destination: ContentView()) {                        Text("New York City")
-                        
-                            .foregroundColor(Color.blue)
-                    }
-                    NavigationLink(destination: ContentView()) {                        Text("New Jersey")
-                            .foregroundColor(Color.blue)
-                    }
-                    NavigationLink(destination: ContentView()) {                        Text("Philadelphia, NY")
-                            .foregroundColor(Color.blue)
-                    }
-                    NavigationLink(destination: ContentView()) {                        Text("Rochester, NY")
-                            .foregroundColor(Color.blue)
-                    }
-                        
-                    
-                }
+                List(locations, id: \.self) { location in
+                               NavigationLink(destination: ContentView()) {
+                                   Text(location)
+                                       .foregroundColor(Color.blue)
+                               }
+                           }
                 .listStyle(PlainListStyle())
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)

@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    // Replace YOUR_API_KEY in WeatherManager with your own API key for the app to work
     @StateObject var locationManager = LocationManager()
     var weatherManager = WeatherManager()
     @State var weather: ResponseBody?
-    
+    @State private var animate = false
+    @State private var showAnimation = false
     var body: some View {
         VStack {
+            
+            AnimatedView(isVisible: $showAnimation)
             if let location = locationManager.location {
                 if let weather = weather {
                     WeatherView(weather: weather)
@@ -40,6 +42,7 @@ struct ContentView: View {
         .background(Color(hue: 0.656, saturation: 0.787, brightness: 0.354))
         .preferredColorScheme(.dark)
     }
+   
 }
 
 struct ContentView_Previews: PreviewProvider {
